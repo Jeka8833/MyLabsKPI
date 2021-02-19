@@ -43,7 +43,11 @@ int Util::readInt() {
 
 float Util::readFloat() {
     try {
-        return std::stof(readLine());
+        std::wstring text = readLine();
+        int index = text.find(L',');
+        if (index != -1)
+            return std::stof(text.replace(index, 1, L"."));
+        return std::stof(text);
     } catch (...) {
         if (errorCode == NONE)
             errorCode = FAIL_PARSE;
