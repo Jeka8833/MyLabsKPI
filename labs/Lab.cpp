@@ -5,9 +5,10 @@
 #include "Lab.h"
 #include "Lab2.h"
 #include "../Util.h"
+#include "Lab3.h"
 
-int Lab::arraySize = 1;
-Lab *Lab::labList[] = {new Lab2()};
+int Lab::arraySize = 2;
+Lab *Lab::labList[] = {new Lab2(), new Lab3()};
 
 void Lab::run(int index) {
     while (true) {
@@ -28,4 +29,9 @@ void Lab::run(int index) {
             Util::println(L"Ошибка выполнения...");
         }
     }
+}
+
+void Lab::printList() {
+    for (int i = 0; i < arraySize; i++)
+        Util::println(to_wstring(i + 1) + L": " + labList[i]->getName());
 }
