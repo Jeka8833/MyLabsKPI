@@ -19,8 +19,8 @@ void Lab3::run() {
         Util::println(L"4. Вихід з програми");
         switch (Util::getIntAndCheckRange(L"\nВведи номер запускаемого пункта: ", L"Попробуй ещё раз", 1, 4)) {
             case 1:
-                e = Util::getIntAndCheckRange(L"Введите точность: ", L"Попробуй ещё раз", 1, 17);
-                x = Util::getFloatAndCheckRange(L"Введите x: ", L"Попробуй ещё раз", -1, 1);
+                e = Util::getIntAndCheckRange(L"Введите точность(1-17): ", L"Попробуй ещё раз", 1, 17);
+                x = Util::getFloatAndCheckRange(L"Введите x(-1 - 1): ", L"Попробуй ещё раз", -1, 1);
                 Util::println(L"Удачно");
                 break;
             case 2:
