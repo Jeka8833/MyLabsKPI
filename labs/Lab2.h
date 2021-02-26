@@ -10,6 +10,7 @@
 
 class Lab2 : public Lab {
     void run() override;
+
     wstring getName() override;
 };
 

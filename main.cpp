@@ -4,7 +4,6 @@
 #include <string>
 #include <io.h>
 #include <fcntl.h>
-#include <windows.h>
 
 int main() {
     _setmode(_fileno(stdout), _O_U16TEXT);
@@ -16,19 +15,14 @@ int main() {
                 L"Список всех лабораторных(Пожалуйста напишите номер лабораторной работы которую хотите запустить):");
         Lab::printList();
         Util::println(L"");
-        int number = Util::printAndReadIntError(
+        int number = Util::getIntAndCheckRange(
                 L"Напишите 'exit' для выхода из программы\n"
                 "Введите номер лабораторной работы за списком (1-" + to_wstring(Lab::arraySize) + L"):",
                 L"Попробуй ещё раз ввести число\n",
-                true);
+                1, Lab::arraySize);
 
         if (Util::errorCode == EXIT) {
             return 0;
-        }
-        if (number < 1 || number > Lab::arraySize) {
-            Util::println(L"Умный чтоль или слишком умный...");
-            Util::println(L"\n");
-            continue;
         }
         Lab::run(number - 1);
     }

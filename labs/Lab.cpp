@@ -6,9 +6,12 @@
 #include "Lab2.h"
 #include "../Util.h"
 #include "Lab3.h"
+#include "Lab4.h"
+#include "Lab5.h"
+#include "Lab6.h"
 
-int Lab::arraySize = 2;
-Lab *Lab::labList[] = {new Lab2(), new Lab3()};
+int Lab::arraySize = 5;
+Lab *Lab::labList[] = {new Lab2(), new Lab3(), new Lab4(), new Lab5(), new Lab6()};
 
 void Lab::run(int index) {
     while (true) {

@@ -17,6 +17,7 @@ public:
     virtual wstring getName() = 0;
 
     static void printList();
+
     static void run(int index);
 
     static int arraySize;
