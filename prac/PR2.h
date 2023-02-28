@@ -15,7 +15,7 @@ class PR2 : public Task {
 
 private:
     static void insertionSort(int a[], int N, bool inversion);
-    static int binarySearch(const int mas[], int search_key, int size);
+    static int binarySearch(const int mas[], int search_key, int size, bool inversion);
 };
 
 

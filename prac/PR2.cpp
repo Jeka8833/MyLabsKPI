@@ -51,7 +51,7 @@ void PR2::run() {
     }
 
     for (int i = 0; i < queueSize; i++) {
-        int position = binarySearch(array, queue[i], count);
+        int position = binarySearch(array, queue[i], count, inversion);
 
         Util::println(L"Number " + to_wstring(queue[i]) + L" contained in position " +
                       (position == -1 ? L"None" : to_wstring(position)));
@@ -77,19 +77,31 @@ void PR2::insertionSort(int a[], int N, bool inversion) {
     }
 }
 
-int PR2::binarySearch(const int mas[], int search_key, int size) {
+int PR2::binarySearch(const int mas[], int search_key, int size, bool inversion) {
     int low, high, mid;
     low = 0;
     high = size - 1;
     while (low <= high) {
         mid = (low + high) / 2;
-        if (search_key < mas[mid]) {
-            high = mid - 1;
-        } else {
+        if (inversion) {
             if (search_key > mas[mid]) {
-                low = mid + 1;
+                high = mid - 1;
             } else {
-                return mid;
+                if (search_key < mas[mid]) {
+                    low = mid + 1;
+                } else {
+                    return mid;
+                }
+            }
+        } else {
+            if (search_key < mas[mid]) {
+                high = mid - 1;
+            } else {
+                if (search_key > mas[mid]) {
+                    low = mid + 1;
+                } else {
+                    return mid;
+                }
             }
         }
     }
