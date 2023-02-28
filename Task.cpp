@@ -2,20 +2,21 @@
 // Created by Jeka8833 on 13.02.2021.
 //
 
-#include "Lab.h"
-#include "Lab2.h"
-#include "../Util.h"
-#include "Lab3.h"
-#include "Lab4.h"
-#include "Lab5.h"
-#include "Lab6.h"
-#include "Lab7.h"
-#include "Lab8.h"
+#include "Task.h"
+#include "labs/Lab2.h"
+#include "Util.h"
+#include "labs/Lab3.h"
+#include "labs/Lab4.h"
+#include "labs/Lab5.h"
+#include "labs/Lab6.h"
+#include "labs/Lab7.h"
+#include "labs/Lab8.h"
+#include "prac/PR2.h"
 
-int Lab::arraySize = 7;
-Lab *Lab::labList[] = {new Lab2(), new Lab3(), new Lab4(), new Lab5(), new Lab6(), new Lab7(), new Lab8()};
+int Task::arraySize = 7;
+Task *Task::labList[] = {new PR2(), new Lab2(), new Lab3(), new Lab4(), new Lab5(), new Lab6(), new Lab7(), new Lab8()};
 
-void Lab::run(int index) {
+void Task::run(int index) {
     while (true) {
         try {
             Util::println(L"");
@@ -36,7 +37,7 @@ void Lab::run(int index) {
     }
 }
 
-void Lab::printList() {
+void Task::printList() {
     for (int i = 0; i < arraySize; i++)
         Util::println(to_wstring(i + 1) + L": " + labList[i]->getName());
 }

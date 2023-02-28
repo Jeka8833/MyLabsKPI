@@ -2,15 +2,15 @@
 // Created by Jeka8833 on 13.02.2021.
 //
 
-#ifndef TESTPROJECT_LAB_H
-#define TESTPROJECT_LAB_H
+#ifndef TESTPROJECT_TASK_H
+#define TESTPROJECT_TASK_H
 
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class Lab {
+class Task {
 public:
     virtual void run() = 0;
 
@@ -21,8 +21,8 @@ public:
     static void run(int index);
 
     static int arraySize;
-    static Lab *labList[];
+    static Task *labList[];
 };
 
 
-#endif //TESTPROJECT_LAB_H
+#endif //TESTPROJECT_TASK_H

@@ -6,9 +6,9 @@
 #define TESTPROJECT_LAB5_H
 
 
-#include "Lab.h"
+#include "../Task.h"
 
-class Lab5 : public Lab{
+class Lab5 : public Task{
     void run() override;
 
     wstring getName() override;

@@ -1,5 +1,5 @@
 #include "Util.h"
-#include "labs/Lab.h"
+#include "Task.h"
 
 #include <string>
 #include <io.h>
@@ -13,17 +13,17 @@ int main() {
     while (true) {
         Util::println(
                 L"Список всех лабораторных(Пожалуйста напишите номер лабораторной работы которую хотите запустить):");
-        Lab::printList();
+        Task::printList();
         Util::println(L"");
         int number = Util::getIntAndCheckRange(
                 L"Напишите 'exit' для выхода из программы\n"
-                "Введите номер лабораторной работы за списком (1-" + to_wstring(Lab::arraySize) + L"):",
+                "Введите номер лабораторной работы за списком (1-" + to_wstring(Task::arraySize) + L"):",
                 L"Попробуй ещё раз ввести число\n",
-                1, Lab::arraySize);
+                1, Task::arraySize);
 
         if (Util::errorCode == EXIT) {
             return 0;
         }
-        Lab::run(number - 1);
+        Task::run(number - 1);
     }
 }
