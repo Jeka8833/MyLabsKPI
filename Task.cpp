@@ -13,9 +13,10 @@
 #include "labs/Lab8.h"
 #include "prac/PR2.h"
 #include "prac/PR3.h"
+#include "prac/PR5.h"
 
-int Task::arraySize = 9;
-Task *Task::labList[] = {new PR2(), new PR3(), new Lab2(), new Lab3(), new Lab4(), new Lab5(), new Lab6(), new Lab7(), new Lab8()};
+int Task::arraySize = 10;
+Task *Task::labList[] = {new PR2(), new PR3(), new PR5(), new Lab2(), new Lab3(), new Lab4(), new Lab5(), new Lab6(), new Lab7(), new Lab8()};
 
 void Task::run(int index) {
     while (true) {
